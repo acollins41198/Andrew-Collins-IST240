@@ -5,8 +5,8 @@
 	<body>
 		@{
 			if (IsPost) {
-				float value1 = Request["Value1"];
-				float value2 = Request["Value2"];
+				double value1 = Convert.ToDouble(Request["Value1"]);
+				double value2 = Convert.ToDouble(Request["Value2"]);
 				int selectionType = Request["SelectionType"];
 				<p>Answer: @result</p>
 			}
