@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>WebForms Calculator</title>
+	</head>
+	<body>
+		@{
+			if (IsPost) {
+				float value1 = Request["Value1"];
+				float value2 = Request["Value2"];
+				int selectionType = Request["SelectionType"];
+				<p>Answer: @result</p>
+			}
+		}
+	
+		<h1 style="text-align: center;">Calculator</h1>
+		<form method="post" action="">
+		First Value: <input type="number" name="Value1" value="0"> <br>
+		Second Value: <input type="number" name="Value2" value="0"> <br>
+		Calculation Type: <br>
+		<input type="radio" name="SelectionType" value="1"> Add <br>
+		<input type="radio" name="SelectionType" value="1"> Subtract <br>
+		<input type="radio" name="SelectionType" value="1"> Multiply <br>
+		<input type="radio" name="SelectionType" value="1"> Divide <br>
+		</form>
+	</body>
+</html>
