@@ -3,11 +3,12 @@
 		<title>WebForms Calculator</title>
 	</head>
 	<body>
+		<h1 style="text-align: center;">Calculator</h1>
 		@{
 			if (IsPost) {
 				double value1 = Convert.ToDouble(Request["Value1"]);
 				double value2 = Convert.ToDouble(Request["Value2"]);
-				int selectionType = Convert.ToInt(Request["SelectionType"]);
+				int selectionType = Convert.ToInt32(Request["SelectionType"]);
 				double result = 0;
 				switch (selectionType){
 					case 1:
@@ -27,18 +28,18 @@
 						break;
 				}
 				<p>Answer: @result</p>
+			} else { 
+			<form method="post" action="">
+				First Value: <input type="number" name="Value1" value="0"> <br>
+				Second Value: <input type="number" name="Value2" value="0"> <br>
+				Calculation Type: <br>
+				<input type="radio" name="SelectionType" value="1"> Add <br>
+				<input type="radio" name="SelectionType" value="2"> Subtract <br>
+				<input type="radio" name="SelectionType" value="3"> Multiply <br>
+				<input type="radio" name="SelectionType" value="4"> Divide <br>
+				<input type="submit" value="Submit" class="submit" />
+			</form>
 			}
 		}
-	
-		<h1 style="text-align: center;">Calculator</h1>
-		<form method="post" action="">
-		First Value: <input type="number" name="Value1" value="0"> <br>
-		Second Value: <input type="number" name="Value2" value="0"> <br>
-		Calculation Type: <br>
-		<input type="radio" name="SelectionType" value="1"> Add <br>
-		<input type="radio" name="SelectionType" value="2"> Subtract <br>
-		<input type="radio" name="SelectionType" value="3"> Multiply <br>
-		<input type="radio" name="SelectionType" value="4"> Divide <br>
-		</form>
 	</body>
 </html>
