@@ -26,5 +26,10 @@ namespace MyWebApp.Controllers
 
             return View();
         }
+
+        public ActionResult CalcApp()
+        {
+            return View();
+        }
     }
 }
